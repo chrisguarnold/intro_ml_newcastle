@@ -15,4 +15,7 @@ Christian Arnold, Cardiff University
 ## Docs 
 * Use browser to view slides in 00_newcastle_ml_presentation.html
 
+## Thanks
+Thanks to Marcel Neunhoeffer. This class builds on his slides and code.
+
 
