@@ -172,10 +172,14 @@ Goal: Making machine learning Uncool Again
 
 
 
-
-
-
-
+---
+## Agenda
+1. What is machine learning?
+2. Your first machine learning model: Logit regression
+3. Tools for doing machine learning 
+4. More machine learning models
+5. Tuning machine learning models
+6. Discussion space: Ethics of SocSci in times of AI
 
 
 
@@ -183,7 +187,7 @@ Goal: Making machine learning Uncool Again
 &lt;!-- 2 Machine Learning Basics --&gt;
 ---
 class: inverse center middle
-## Machine Learning Basics
+## 1. What is Machine Learning?
 
 ---
 
@@ -306,8 +310,8 @@ class: table
 ## A Look at the German Credit Dataset
 
 
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a7f8944fe0c189f7c588" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a7f8944fe0c189f7c588">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["1","2","3","4","5","6","7","8"],["no checking account","no checking account","... &lt; 0 DM","no checking account","no checking account","no checking account","no checking account","no checking account"],[18,9,12,12,12,10,8,6],["all credits at this bank paid back duly","all credits at this bank paid back duly","no credits taken/all credits paid back duly","all credits at this bank paid back duly","all credits at this bank paid back duly","all credits at this bank paid back duly","all credits at this bank paid back duly","all credits at this bank paid back duly"],["car (used)","others","retraining","others","others","others","others","others"],[1049,2799,841,2122,2171,2241,3398,1361],["unknown/no savings account","unknown/no savings account","... &lt;  100 DM","unknown/no savings account","unknown/no savings account","unknown/no savings account","unknown/no savings account","unknown/no savings account"],["&lt; 1 yr","1 &lt;= ... &lt; 4 yrs","4 &lt;= ... &lt; 7 yrs","1 &lt;= ... &lt; 4 yrs","1 &lt;= ... &lt; 4 yrs","&lt; 1 yr","4 &lt;= ... &lt; 7 yrs","&lt; 1 yr"],["&lt; 20","25 &lt;= ... &lt; 35","25 &lt;= ... &lt; 35","20 &lt;= ... &lt; 25","&lt; 20","&gt;= 35","&gt;= 35","25 &lt;= ... &lt; 35"],["female : non-single or male : single","male : married/widowed","female : non-single or male : single","male : married/widowed","male : married/widowed","male : married/widowed","male : married/widowed","male : married/widowed"],["none","none","none","none","none","none","none","none"],["&gt;= 7 yrs","1 &lt;= ... &lt; 4 yrs","&gt;= 7 yrs","1 &lt;= ... &lt; 4 yrs","&gt;= 7 yrs","4 &lt;= ... &lt; 7 yrs","&gt;= 7 yrs","&gt;= 7 yrs"],["car or other","unknown / no property","unknown / no property","unknown / no property","car or other","unknown / no property","unknown / no property","unknown / no property"],[21,36,23,39,38,48,39,40],["none","none","none","none","bank","none","none","none"],["for free","for free","for free","for free","rent","for free","rent","rent"],["1","2-3","1","2-3","2-3","2-3","2-3","1"],["skilled employee/official","skilled employee/official","unskilled - resident","unskilled - resident","unskilled - resident","unskilled - resident","unskilled - resident","unskilled - resident"],["0 to 2","3 or more","0 to 2","3 or more","0 to 2","3 or more","0 to 2","3 or more"],["no","no","no","no","no","no","no","no"],["no","no","no","yes","yes","yes","yes","yes"],["good","good","good","good","good","good","good","good"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>status<\/th>\n      <th>duration<\/th>\n      <th>credit_history<\/th>\n      <th>purpose<\/th>\n      <th>amount<\/th>\n      <th>savings<\/th>\n      <th>employment_duration<\/th>\n      <th>installment_rate<\/th>\n      <th>personal_status_sex<\/th>\n      <th>other_debtors<\/th>\n      <th>present_residence<\/th>\n      <th>property<\/th>\n      <th>age<\/th>\n      <th>other_installment_plans<\/th>\n      <th>housing<\/th>\n      <th>number_credits<\/th>\n      <th>job<\/th>\n      <th>people_liable<\/th>\n      <th>telephone<\/th>\n      <th>foreign_worker<\/th>\n      <th>credit_risk<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[2,5,13]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c5d03ab52e92ba3a02c2" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c5d03ab52e92ba3a02c2">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["1","2","3","4","5","6","7","8"],["no checking account","no checking account","... &lt; 0 DM","no checking account","no checking account","no checking account","no checking account","no checking account"],[18,9,12,12,12,10,8,6],["all credits at this bank paid back duly","all credits at this bank paid back duly","no credits taken/all credits paid back duly","all credits at this bank paid back duly","all credits at this bank paid back duly","all credits at this bank paid back duly","all credits at this bank paid back duly","all credits at this bank paid back duly"],["car (used)","others","retraining","others","others","others","others","others"],[1049,2799,841,2122,2171,2241,3398,1361],["unknown/no savings account","unknown/no savings account","... &lt;  100 DM","unknown/no savings account","unknown/no savings account","unknown/no savings account","unknown/no savings account","unknown/no savings account"],["&lt; 1 yr","1 &lt;= ... &lt; 4 yrs","4 &lt;= ... &lt; 7 yrs","1 &lt;= ... &lt; 4 yrs","1 &lt;= ... &lt; 4 yrs","&lt; 1 yr","4 &lt;= ... &lt; 7 yrs","&lt; 1 yr"],["&lt; 20","25 &lt;= ... &lt; 35","25 &lt;= ... &lt; 35","20 &lt;= ... &lt; 25","&lt; 20","&gt;= 35","&gt;= 35","25 &lt;= ... &lt; 35"],["female : non-single or male : single","male : married/widowed","female : non-single or male : single","male : married/widowed","male : married/widowed","male : married/widowed","male : married/widowed","male : married/widowed"],["none","none","none","none","none","none","none","none"],["&gt;= 7 yrs","1 &lt;= ... &lt; 4 yrs","&gt;= 7 yrs","1 &lt;= ... &lt; 4 yrs","&gt;= 7 yrs","4 &lt;= ... &lt; 7 yrs","&gt;= 7 yrs","&gt;= 7 yrs"],["car or other","unknown / no property","unknown / no property","unknown / no property","car or other","unknown / no property","unknown / no property","unknown / no property"],[21,36,23,39,38,48,39,40],["none","none","none","none","bank","none","none","none"],["for free","for free","for free","for free","rent","for free","rent","rent"],["1","2-3","1","2-3","2-3","2-3","2-3","1"],["skilled employee/official","skilled employee/official","unskilled - resident","unskilled - resident","unskilled - resident","unskilled - resident","unskilled - resident","unskilled - resident"],["0 to 2","3 or more","0 to 2","3 or more","0 to 2","3 or more","0 to 2","3 or more"],["no","no","no","no","no","no","no","no"],["no","no","no","yes","yes","yes","yes","yes"],["good","good","good","good","good","good","good","good"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>status<\/th>\n      <th>duration<\/th>\n      <th>credit_history<\/th>\n      <th>purpose<\/th>\n      <th>amount<\/th>\n      <th>savings<\/th>\n      <th>employment_duration<\/th>\n      <th>installment_rate<\/th>\n      <th>personal_status_sex<\/th>\n      <th>other_debtors<\/th>\n      <th>present_residence<\/th>\n      <th>property<\/th>\n      <th>age<\/th>\n      <th>other_installment_plans<\/th>\n      <th>housing<\/th>\n      <th>number_credits<\/th>\n      <th>job<\/th>\n      <th>people_liable<\/th>\n      <th>telephone<\/th>\n      <th>foreign_worker<\/th>\n      <th>credit_risk<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[2,5,13]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 Source: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/adult)
 
@@ -341,7 +345,7 @@ This looks less scary. We can see that we organize observations in rows (like in
 
 class: inverse center middle
 
-## A First Machine Learning Algorithm
+## 2. A First Machine Learning Algorithm
 
 
 
@@ -368,7 +372,7 @@ class: inverse center middle
 &lt;!-- Tools for Doing ML in R --&gt;
 ---
 class: inverse middle center
-## Tools and Resources That Help You to Get Started on Your Own Projects
+## 3. Tools and Resources That Help You to Get Started on Your Own Projects
 
 
 ---
@@ -421,7 +425,7 @@ class: inverse center middle
 
 class: inverse center middle
 
-## Further Core Machine Learning Algorithm
+## 4. Further Core Machine Learning Algorithms
 
 ---
 
@@ -530,7 +534,7 @@ class: inverse center middle
 
 class: inverse center middle
 
-## Core Aspects of Machine Learning Algorithms
+## 5. Core Aspects of Machine Learning Algorithms
 
 
 
@@ -658,7 +662,7 @@ class: inverse center middle
 ---
 class: inverse center middle
 
-## Ethics of Doing Social Science in Times of Big Data
+## 6. Ethics of Doing Social Science in Times of AI
 
 
 

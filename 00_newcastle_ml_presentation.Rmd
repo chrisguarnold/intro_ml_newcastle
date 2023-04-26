@@ -227,10 +227,14 @@ Goal: Making machine learning Uncool Again
 
 
 
-
-
-
-
+---
+## Agenda
+1. What is machine learning?
+2. Your first machine learning model: Logit regression
+3. Tools for doing machine learning 
+4. More machine learning models
+5. Tuning machine learning models
+6. Discussion space: Ethics of SocSci in times of AI
 
 
 
@@ -238,7 +242,7 @@ Goal: Making machine learning Uncool Again
 <!-- 2 Machine Learning Basics -->
 ---
 class: inverse center middle
-## Machine Learning Basics
+## 1. What is Machine Learning?
 
 ---
 
@@ -412,7 +416,7 @@ This looks less scary. We can see that we organize observations in rows (like in
 
 class: inverse center middle
 
-## A First Machine Learning Algorithm
+## 2. A First Machine Learning Algorithm
 
 
 
@@ -439,7 +443,7 @@ class: inverse center middle
 <!-- Tools for Doing ML in R -->
 ---
 class: inverse middle center
-## Tools and Resources That Help You to Get Started on Your Own Projects
+## 3. Tools and Resources That Help You to Get Started on Your Own Projects
 
 
 ---
@@ -494,7 +498,7 @@ knitr::include_graphics("figures/MLR3.png")
 
 class: inverse center middle
 
-## Further Core Machine Learning Algorithm
+## 4. Further Core Machine Learning Algorithms
 
 ---
 
@@ -603,7 +607,7 @@ class: inverse center middle
 
 class: inverse center middle
 
-## Core Aspects of Machine Learning Algorithms
+## 5. Core Aspects of Machine Learning Algorithms
 
 
 
@@ -739,7 +743,7 @@ class: inverse center middle
 ---
 class: inverse center middle
 
-## Ethics of Doing Social Science in Times of Big Data
+## 6. Ethics of Doing Social Science in Times of AI
 
 
 
